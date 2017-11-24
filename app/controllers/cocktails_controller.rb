@@ -24,6 +24,11 @@ class CocktailsController < ApplicationController
     end
   end
 
+  # def select
+  #   @ingredient = Ingredient.find(params[])
+  #   @cocktails = Cocktail.where(name: @ingredient.name)
+  # end
+
   private
 
   def set_cocktail

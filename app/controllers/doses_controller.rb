@@ -13,8 +13,7 @@ class DosesController < ApplicationController
     else
       @doses = Dose.where(cocktail_id: @cocktail.id)
       @ingredients = Ingredient.all
-      # render 'cocktails/show'
-      render :new
+      render 'cocktails/show'
     end
   end
 

@@ -7,11 +7,11 @@ method: :delete,
 data: { confirm: "Are you sure?" } %>
 <% end %>
 
-<h2>Add a Dose</h2>
+<h4>Add a Dose</h4>
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.input :ingredient_id, collection: @ingredients, include_blank: false %>
   <%= f.submit "Add a dose", class: "btn btn-primary" %>
   <% end %>
 
-<%= link_to "List of cocktails", cocktails_path %>
+<%= link_to "Back to cocktails", cocktails_path, class: "btn btn-primary" %>
