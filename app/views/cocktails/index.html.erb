@@ -1,13 +1,12 @@
 <h1>List of cocktails</h1>
 
 <div class="container">
-
-
-
   <% @cocktails.each do |cocktail| %>
 
-    <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3> 
-
+  <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3> 
+  <% if cocktail.photo? %>
+  <%= cl_image_tag cocktail.photo.path, width: 100, height: 150, crop: :fill  %>
+<% end %>
   <% end %>
 
   <%= link_to "Add a cocktail", new_cocktail_path %>
