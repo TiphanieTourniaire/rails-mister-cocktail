@@ -1,14 +1,16 @@
 <h1>List of cocktails</h1>
 
 <div class="container">
-  <% @cocktails.each do |cocktail| %>
-
-  <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3> 
-  <% if cocktail.photo? %>
-  <%= cl_image_tag cocktail.photo.path, width: 100, height: 150, crop: :fill  %>
-<% end %>
+<div class="row">
+    <% @cocktails.each do |cocktail| %>
+  <div class="col-xs-12 col-sm-4">
+      <%= render 'shared/card', cocktail: cocktail %>
+    </div>
   <% end %>
+</div>
 
-  <%= link_to "Add a cocktail", new_cocktail_path %>
+
+  <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+</div>
 </div>
 
